@@ -6,26 +6,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="job.css">
     <title>Jobs | Includify - Empowering Through Inclusion</title>
-    <style>
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #3f4243 0%, #2a2b2c 100%);
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-        main {
-            flex: 1;
-            padding-top: 4rem;
-        }
-    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navbar (Same as previous version) -->
@@ -58,6 +41,14 @@
 
     <!-- Main Content -->
     <main>
+        <form id="hospitalSearchForm" class="hos-ser-form">
+            <label for="hospitalName"></label>
+            <input type="search" id="hospitalName" name="hospitalName">
+    
+            <button type="submit">Search</button>
+        </form>
+    
+        <div id="jobList" class="jos-lst"></div>
         <!-- Job Selection Section -->
     </main>
 
@@ -100,21 +91,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
-    </script>
+    <script src="job.js"></script>
 </body>
 </html>
